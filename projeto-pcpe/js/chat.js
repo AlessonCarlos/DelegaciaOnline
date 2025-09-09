@@ -318,22 +318,23 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Iniciar chat
-    if (startChatBtn) {
-        startChatBtn.addEventListener('click', function () {
-            chatInterface.classList.remove('hidden');
-            currentState = "start";
-            userData = { ocorrencia: {} }; // Resetar memória
-            chatMessages.innerHTML = ""; // Limpar histórico
-            renderChatState(currentState);
-        });
-    }
+    // Iniciar chat - CORRIGIDO
+if (startChatBtn) {
+    startChatBtn.addEventListener('click', function () {
+        chatInterface.classList.add('active');
+        currentState = "start";
+        userData = { ocorrencia: {} }; // Resetar memória
+        chatMessages.innerHTML = ""; // Limpar histórico
+        renderChatState(currentState);
+    });
+}
 
-    // Fechar chat
-    if (closeChatBtn) {
-        closeChatBtn.addEventListener('click', function () {
-            chatInterface.classList.add('hidden');
-        });
-    }
+// Fechar chat - CORRIGIDO
+if (closeChatBtn) {
+    closeChatBtn.addEventListener('click', function () {
+        chatInterface.classList.remove('active');
+    });
+}
 
     // Enviar mensagem
     if (sendMessageBtn) {
