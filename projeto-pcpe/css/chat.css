@@ -93,3 +93,21 @@
         margin-bottom: 8px;
     }
 }
+
+
+#chat-interface {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 70vh; /* ocupa 70% da altura da tela */
+    max-height: 80vh; /* nunca passa de 80% */
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+
