@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Polícia Civil de Pernambuco</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-4 px-6 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmQ3MDAiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMTIgMmw0IDRtLTQgNGw0LTQiPjxwYXRoIGQ9Ik0zIDNoM2wxMSAxOEgxNEw2IDEyaDExbC00LThIM2wxMSAxOEgxNEw2IDEyaDExbC00LThINCIvPjwvc3ZnPg==" alt="Logo Polícia Civil PE" class="h-10 w-10 mr-3">
+                <h1 class="text-xl font-bold">Polícia Civil de Pernambuco</h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#inicio" class="hover:text-yellow-300 transition">Início</a></li>
+                    <li><a href="#servicos" class="hover:text-yellow-300 transition">Serviços</a></li>
+                    <li><a href="#delegacias" class="hover:text-yellow-300 transition">Delegacias</a></li>
+                    <li><a href="#estatisticas" class="hover:text-yellow-300 transition">Estatísticas</a></li>
+                    <li><a href="#noticias" class="hover:text-yellow-300 transition">Notícias</a></li>
+                    <li><button id="contrast-toggle" class="hover:text-yellow-300 transition"><i class="fas fa-adjust"></i> Alto Contraste</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section id="inicio" class="bg-white rounded-lg shadow-md p-8 mb-8 text-center">
+            <h2 class="text-3xl font-bold text-blue-900 mb-4">Chatbot de Atendimento</h2>
+            <p class="text-gray-700 mb-6">Registre ocorrências não violentas e obtenha ajuda rapidamente, sem necessidade de deslocamento até a delegacia.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-blue-100 p-6 rounded-lg">
+                    <i class="fas fa-clock text-blue-900 text-3xl mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-2">Disponível 24/7</h3>
+                    <p class="text-gray-700">Atendimento disponível a qualquer hora, todos os dias.</p>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg">
+                    <i class="fas fa-shield-alt text-blue-900 text-3xl mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-2">Conformidade LGPD</h3>
+                    <p class="text-gray-700">Seus dados estão protegidos conforme a legislação.</p>
+                </div>
+                <div class="bg-blue-100 p-6 rounded-lg">
+                    <i class="fas fa-mobile-alt text-blue-900 text-3xl mb-3"></i>
+                    <h3 class="font-semibold text-lg mb-2">Multiplataforma</h3>
+                    <p class="text-gray-700">Acessível via WhatsApp, site e aplicativo.</p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col items-center">
+                <button id="start-chat" class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-full transition mb-4">
+                    Iniciar Conversa <i class="fas fa-comments ml-2"></i>
+                </button>
+                <div class="flex space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
+                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                    </button>
+                    <button class="bg-gray-800 hover:bg-gray-900 text-white py-2 px-4 rounded-lg transition">
+                        <i class="fas fa-mobile-alt mr-2"></i> Aplicativo
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Serviços Disponíveis</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-file-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Registro de Ocorrências</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Registre ocorrências não violentas como furto simples, perda de documentos, vandalismo e perturbação do sossego.</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Registro online sem sair de casa</li>
+                        <li>Número de protocolo para acompanhamento</li>
+                        <li>Atendimento 24 horas por dia</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-search text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Consulta de Protocolos</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Acompanhe o andamento das suas ocorrências registradas através do número de protocolo.</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Status atualizado em tempo real</li>
+                        <li>Previsão de conclusão</li>
+                        <li>Histórico de andamento</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-info-circle text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Informações e Orientações</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Obtenha informações sobre serviços, documentação necessária e delegacias especializadas.</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Delegacias mais próximas</li>
+                        <li>Documentos necessários para cada serviço</li>
+                        <li>Orientações preventivas</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Atendimento Especializado</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">Canais diretos para casos sensíveis como violência doméstica e crimes contra idosos.</p>
+                    <ul class="list-disc list-inside text-gray-700 pl-4">
+                        <li>Encaminhamento imediato para delegacias especializadas</li>
+                        <li>Atendimento humanizado e sigiloso</li>
+                        <li>Suporte psicológico e jurídico</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Police Stations Section -->
+        <section id="delegacias" class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Delegacias Especializadas</h2>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                <p class="text-blue-800"><i class="fas fa-info-circle mr-2"></i> Encontre a delegacia mais próxima ou especializada no seu tipo de ocorrência.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Delegacia da Mulher - DEAM</h3>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-900"></i> Av. Conselheiro Rosa e Silva, 1230 - Graças, Recife</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-900"></i> (81) 3184-3457</p>
+                    <p class="text-gray-700 mb-4"><i class="fas fa-clock mr-2 text-blue-900"></i> 24h (plantão permanente)</p>
+                    <p class="text-gray-700">Atendimento especializado para casos de violência doméstica e familiar contra a mulher.</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Departamento de Homicídios e Proteção à Pessoa - DHPP</h3>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-900"></i> Rua do Brum, 115 - Bairro do Recife, Recife</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-900"></i> (81) 3184-3460</p>
+                    <p class="text-gray-700 mb-4"><i class="fas fa-clock mr-2 text-blue-900"></i> 24h (plantão permanente)</p>
+                    <p class="text-gray-700">Investigação de crimes contra a vida (homicídios, desaparecimentos e sequestros).</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Delegacia de Crimes Cibernéticos</h3>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-900"></i> Av. Dantas Barreto, 696 - Santo Antônio, Recife</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-900"></i> (81) 3184-3450</p>
+                    <p class="text-gray-700 mb-4"><i class="fas fa-clock mr-2 text-blue-900"></i> Segunda a sexta, 8h às 18h</p>
+                    <p class="text-gray-700">Atendimento especializado para crimes virtuais, estelionato online e invasão de dispositivos.</p>
+                </div>
+                
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Delegacia de Furtos e Roubos - DFR</h3>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-map-marker-alt mr-2 text-blue-900"></i> Rua da Aurora, 475 - Boa Vista, Recife</p>
+                    <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2 text-blue-900"></i> (81) 3184-3465</p>
+                    <p class="text-gray-700 mb-4"><i class="fas fa-clock mr-2 text-blue-900"></i> Segunda a sexta, 8h às 18h</p>
+                    <p class="text-gray-700">Registro e investigação de casos de furtos, roubos e apropriação indébita.</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition">
+                    <i class="fas fa-map-marked-alt mr-2"></i> Ver Todas as Delegacias
+                </button>
+            </div>
+        </section>
+
+        <!-- Chat Interface -->
+        <section id="chat-interface" class="bg-white rounded-lg shadow-md p-6 mb-8 hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-blue-900">Chat de Atendimento</h2>
+                <button id="close-chat" class="text-red-500 hover:text-red-700">
+                    <i class="fas fa-times-circle text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="chat-container bg-gray-100 p-4 rounded-lg mb-4" id="chat-messages">
+                <div class="message bot-message">
+                    <p>Olá! Sou o assistente virtual da Polícia Civil de Pernambuco. Como posso ajudá-lo hoje?</p>
+                </div>
+                <div class="message bot-message">
+                    <p>Selecione uma opção:</p>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                        <button class="option-button bg-blue-900 text-white px-4 py-2 rounded-lg" data-option="register">Registrar Ocorrência</button>
+                        <button class="option-button bg-blue-700 text-white px-4 py-2 rounded-lg" data-option="consult">Consultar Protocolo</button>
+                        <button class="option-button bg-blue-500 text-white px-4 py-2 rounded-lg" data-option="info">Informações</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex">
+                <input type="text" id="chat-input" placeholder="Digite sua mensagem..." class="flex-grow border border-gray-300 rounded-l-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="send-message" class="bg-blue-900 text-white px-6 rounded-r-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="estatisticas" class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Estatísticas de Atendimento</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="stat-card bg-blue-100 p-6 rounded-lg text-center">
+                    <i class="fas fa-comments text-blue-900 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-2xl mb-1">15,842</h3>
+                    <p class="text-gray-700">Atendimentos Realizados</p>
+                </div>
+                
+                <div class="stat-card bg-green-100 p-6 rounded-lg text-center">
+                    <i class="fas fa-clock text-green-900 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-2xl mb-1">3.8 min</h3>
+                    <p class="text-gray-700">Tempo Médio de Resposta</p>
+                </div>
+                
+                <div class="stat-card bg-yellow-100 p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-pie text-yellow-900 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-2xl mb-1">92%</h3>
+                    <p class="text-gray-700">Ocorrências Resolvidas</p>
+                </div>
+                
+                <div class="stat-card bg-purple-100 p-6 rounded-lg text-center">
+                    <i class="fas fa-user-check text-purple-900 text-3xl mb-3"></i>
+                    <h3 class="font-bold text-2xl mb-1">96%</h3>
+                    <p class="text-gray-700">Satisfação do Usuário</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-100 p-6 rounded-lg mb-8">
+                <h3 class="font-semibold text-lg mb-4">Tipos de Ocorrência Mais Frequentes</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex justify-between mb-2">
+                            <span>Som Alto/Poluição Sonora</span>
+                            <span class="font-semibold">42%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 42%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex justify-between mb-2">
+                            <span>Furto Simples</span>
+                            <span class="font-semibold">28%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 28%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex justify-between mb-2">
+                            <span>Perda de Documentos</span>
+                            <span class="font-semibold">15%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                        <div class="flex justify-between mb-2">
+                            <span>Vandalismo</span>
+                            <span class="font-semibold">10%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-blue-50 p-6 rounded-lg">
+                <h3 class="font-semibold text-lg mb-4">Evolução Mensal de Atendimentos</h3>
+                <div class="flex items-end h-40 gap-2 justify-center">
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-900 w-10 rounded-t" style="height: 80px;"></div>
+                        <span class="text-xs mt-1">Jan</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-800 w-10 rounded-t" style="height: 95px;"></div>
+                        <span class="text-xs mt-1">Fev</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-700 w-10 rounded-t" style="height: 110px;"></div>
+                        <span class="text-xs mt-1">Mar</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-600 w-10 rounded-t" style="height: 125px;"></div>
+                        <span class="text-xs mt-1">Abr</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-500 w-10 rounded-t" style="height: 140px;"></div>
+                        <span class="text-xs mt-1">Mai</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-900 w-10 rounded-t" style="height: 120px;"></div>
+                        <span class="text-xs mt-1">Jun</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-blue-800 w-10 rounded-t" style="height: 135px;"></div>
+                        <span class="text-xs mt-1">Jul</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="noticias" class="bg-white rounded-lg shadow-md p-8 mb-8">
+            <h2 class="text-2xl font-bold text-blue-900 mb-6">Notícias e Avisos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <span class="bg-blue-900 text-white text-xs font-semibold px-2.5 py-0.5 rounded">Notícia</span>
+                    <h3 class="text-xl font-semibold mt-2 mb-2">Novo Posto de Atendimento no Shopping Tacaruna</h3>
+                    <p class="text-gray-700 mb-4">A Polícia Civil inaugurou um novo posto de atendimento no Shopping Tacaruna, facilitando o registro de ocorrências para a população da Zona Norte do Recife.</p>
+                    <p class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Publicado em: 15 de Agosto de 2023</p>
+                </div>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                    <span class="bg-yellow-600 text-white text-xs font-semibold px-2.5 py-0.5 rounded">Aviso</span>
+                    <h3 class="text-xl font-semibold mt-2 mb-2">Atendimento Presencial com Horário Marcado</h3>
+                    <p class="text-gray-700 mb-4">Para melhor servir à população, o atendimento presencial nas delegacias agora funciona com agendamento prévio através do nosso site ou aplicativo.</p>
+                    <p class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Publicado em: 10 de Agosto de 2023</p>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <span class="bg-green-700 text-white text-xs font-semibold px-2.5 py-0.5 rounded">Dica de Segurança</span>
+                    <h3 class="text-xl font-semibold mt-2 mb-2">Cuidados com Documentos Pessoais</h3>
+                    <p class="text-gray-700 mb-4">Evite carregar documentos originais desnecessariamente. Utilize cópias autenticadas quando possível e registre imediatamente a perda ou furto de documentos.</p>
+                    <p class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Publicado em: 5 de Agosto de 2023</p>
+                </div>
+                
+                <div class="bg-red-50 p-6 rounded-lg">
+                    <span class="bg-red-700 text-white text-xs font-semibold px-2.5 py-0.5 rounded">Alerta</span>
+                    <h3 class="text-xl font-semibold mt-2 mb-2">Golpes pelo WhatsApp</h3>
+                    <p class="text-gray-700 mb-4">Atenção para golpes aplicados através do WhatsApp com falsos representantes de instituições. A Polícia Civil nunca solicita pagamentos ou dados pessoais por mensagem.</p>
+                    <p class="text-gray-500 text-sm"><i class="far fa-calendar-alt mr-1"></i> Publicado em: 1 de Agosto de 2023</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <button class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition">
+                    <i class="fas fa-newspaper mr-2"></i> Ver Todas as Notícias
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Polícia Civil de Pernambuco</h3>
+                    <p>Atendimento 24 horas, 7 dias por semana</p>
+                    <p class="mt-2">Emergências: <span class="font-semibold">190</span></p>
+                    <p class="mt-4">Endereço: Av. Dantas Barreto, 696 - Santo Antônio, Recife - PE, 50010-060</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-yellow-300 transition">Delegacia Virtual</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Serviços Online</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Ouvidoria</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Acesso à Informação</a></li>
+                        <li><a href="#" class="hover:text-yellow-300 transition">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Idioma / Language</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <span class="language-option py-1 px-3 rounded-lg bg-blue-800">Português</span>
+                        <span class="language-option py-1 px-3 rounded-lg">English</span>
+                        <span class="language-option py-1 px-3 rounded-lg">Español</span>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <p class="mb-2">Siga-nos:</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-2xl hover:text-yellow-300 transition"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-blue-700 mt-8 pt-6 text-center text-sm">
+                <p>&copy; 2023 Polícia Civil de Pernambuco. Todos os direitos reservados.</p>
+                <p class="mt-2">Conformidade com a LGPD - Lei Geral de Proteção de Dados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/highContrast.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>
