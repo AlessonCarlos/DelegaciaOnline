@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot - Polícia Civil de Pernambuco</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Seus estilos -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <!-- Header -->
+
+  <div class="container">
+  <div class="hero-banner">
+    <img src="imagens/home_image_02.jpg" alt="Atendimento Polícia Civil de Pernambuco" class="banner-img">
+  </div>
+</div>
+  
+    <div class="container header-container">
+      <div class="logo-container">
+        <h1 class="header-title">Polícia Civil de Pernambuco</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#delegacias">Delegacias</a></li>
+          <li><a href="#estatisticas">Estatísticas</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><button id="contrast-toggle"><i class="fas fa-adjust"></i> Alto Contraste</button></li>
+        </ul>
+      </nav>
+    </div>
+        
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section id="inicio">
+      <h2 class="section-title">Chatbot de Atendimento</h2>
+      <p>Registre ocorrências não violentas e obtenha ajuda rapidamente, sem necessidade de deslocamento até a delegacia.</p>
+
+      <div class="grid grid-cols-3">
+        <div class="card">
+          <i class="fas fa-clock"></i>
+          <h3>Disponível 24/7</h3>
+          <p>Atendimento disponível a qualquer hora, todos os dias.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Conformidade LGPD</h3>
+          <p>Seus dados estão protegidos conforme a legislação.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-mobile-alt"></i>
+          <h3>Multiplataforma</h3>
+          <p>Acessível via WhatsApp, site e aplicativo.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button id="start-chat" class="btn btn-primary">
+          Iniciar Chat <i class="fas fa-comments"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+      <h2 class="section-title">Serviços Disponíveis</h2>
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <h3>Registro de Ocorrências</h3>
+          <p>Furto simples, perda de documentos, vandalismo, perturbação do sossego.</p>
+        </div>
+        <div class="card">
+          <h3>Consulta de Protocolos</h3>
+          <p>Acompanhe o andamento das suas ocorrências registradas.</p>
+        </div>
+        <div class="card">
+          <h3>Informações e Orientações</h3>
+          <p>Delegacias próximas, documentos necessários e orientações preventivas.</p>
+        </div>
+        <div class="card">
+          <h3>Atendimento Especializado</h3>
+          <p>Casos sensíveis como violência doméstica e crimes contra idosos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delegacias -->
+    <section id="delegacias">
+      <h2 class="section-title">Delegacias Especializadas</h2>
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <h3>Delegacia da Mulher - DEAM</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Av. Conselheiro Rosa e Silva, 1230 - Recife</p>
+          <p><i class="fas fa-phone"></i> (81) 3184-3457</p>
+          <p><i class="fas fa-clock"></i> 24h</p>
+        </div>
+        <div class="card">
+          <h3>Departamento de Homicídios - DHPP</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Rua do Brum, 115 - Recife</p>
+          <p><i class="fas fa-phone"></i> (81) 3184-3460</p>
+          <p><i class="fas fa-clock"></i> 24h</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section id="estatisticas">
+      <h2 class="section-title">Estatísticas de Atendimento</h2>
+      <div class="grid grid-cols-4">
+        <div class="stat-card">
+          <i class="fas fa-comments"></i>
+          <h3>15,842</h3>
+          <p>Atendimentos</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-clock"></i>
+          <h3>3.8 min</h3>
+          <p>Tempo Médio</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-chart-pie"></i>
+          <h3>92%</h3>
+          <p>Resolvidas</p>
+        </div>
+        <div class="stat-card">
+          <i class="fas fa-user-check"></i>
+          <h3>96%</h3>
+          <p>Satisfação</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notícias -->
+    <section id="noticias">
+      <h2 class="section-title">Notícias e Avisos</h2>
+      <div class="grid grid-cols-2">
+        <div class="card">
+          <span class="badge">Notícia</span>
+          <h3>Novo Posto de Atendimento</h3>
+          <p>Inauguração no Shopping Tacaruna para facilitar registros.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Aviso</span>
+          <h3>Atendimento com Agendamento</h3>
+          <p>Agora o atendimento presencial precisa de agendamento online.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Chat -->
+  <section id="chat-interface">
+    <div class="chat-header">
+      <h2>Chat de Atendimento</h2>
+      <button id="close-chat"><i class="fas fa-times-circle"></i></button>
+    </div>
+    <div id="chat-messages" class="chat-container"></div>
+    <div class="chat-input-container">
+      <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+      <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h3>Polícia Civil de Pernambuco</h3>
+        <p>Atendimento 24h - Emergência: 190</p>
+      </div>
+      <div>
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#">Delegacia Virtual</a></li>
+          <li><a href="#">Serviços Online</a></li>
+          <li><a href="#">Ouvidoria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Idioma</h3>
+        <div class="language-options">
+          <span class="language-option active">Português</span>
+          <span class="language-option">English</span>
+          <span class="language-option">Español</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Polícia Civil de Pernambuco. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/highContrast.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
